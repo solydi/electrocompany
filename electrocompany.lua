@@ -23,7 +23,7 @@ function main()
 	if not isSampLoaded() or not isSampfuncsLoaded() then return end
 	while not isSampAvailable() do wait(100) end
 
-	sampAddChatMessage('{F48B8C}[INFO] {ffffff}Скрипт {ff7e14}"electrocompany" {ffffff}готов к работе! Автор: {ff7e14}solodi', -1)
+	sampAddChatMessage('{F48B8C}[INFO] {ffffff}РЎРєСЂРёРїС‚ {ff7e14}"electrocompany" {ffffff}РіРѕС‚РѕРІ Рє СЂР°Р±РѕС‚Рµ! РђРІС‚РѕСЂ: {ff7e14}solodi', -1)
 
 	sampRegisterChatCommand("co", function()
 		sampAddChatMessage("{DE3163}Contracts: {FFFFFF}" .. ini.contracts.cont, -1)
@@ -37,7 +37,7 @@ end
 
 function sampev.onServerMessage(color, text)
 
-	if text:find("%Вы успешно заключили контракт с домом №.+ на предоставление энергетических услуг") then
+	if text:find("%Р’С‹ СѓСЃРїРµС€РЅРѕ Р·Р°РєР»СЋС‡РёР»Рё РєРѕРЅС‚СЂР°РєС‚ СЃ РґРѕРјРѕРј в„–.+ РЅР° РїСЂРµРґРѕСЃС‚Р°РІР»РµРЅРёРµ СЌРЅРµСЂРіРµС‚РёС‡РµСЃРєРёС… СѓСЃР»СѓРі") then
 		ini.contracts.cont = ini.contracts.cont + 1
 		inicfg.save(ini, inifilename)
 	end
